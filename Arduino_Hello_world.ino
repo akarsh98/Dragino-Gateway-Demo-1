@@ -12,17 +12,17 @@
 // This is the default Semtech key, which is used by the prototype TTN
 // network initially.
 //ttn
-static const PROGMEM u1_t NWKSKEY[16] = { 0xF2, 0xBF, 0x0D, 0x6F, 0x2F, 0x10, 0xC6, 0x61, 0x78, 0x8D, 0x61, 0x31, 0x48, 0xD9, 0x81, 0x54 };
+static const PROGMEM u1_t NWKSKEY[16] = { 0xC5, 0x18, 0xFC, 0x11, 0x30, 0x74, 0xBF, 0x5D, 0xFB, 0xA4, 0x9B, 0x52, 0x5D, 0x52, 0xD4, 0x46 };
 // LoRaWAN AppSKey, application session key
 // This is the default Semtech key, which is used by the prototype TTN
 // network initially.
 //ttn
-static const u1_t PROGMEM APPSKEY[16] = { 0x21, 0x50, 0x56, 0x92, 0x34, 0x24, 0xDA, 0xA1, 0x38, 0x2E, 0xA9, 0x23, 0x40, 0x71, 0xC9, 0xBF };
+static const u1_t PROGMEM APPSKEY[16] = { 0x6A, 0x76, 0x48, 0x94, 0x94, 0xC3, 0xE6, 0x2B, 0xBC, 0xEF, 0xF1, 0x6F, 0xFB, 0x24, 0x69, 0x97 };
 //
 // LoRaWAN end-device address (DevAddr)
 // See http://thethingsnetwork.org/wiki/AddressSpace
 // ttn
-static const u4_t DEVADDR = 0x260136D1;
+static const u4_t DEVADDR = 0x26013E6F;
 
 // These callbacks are only used in over-the-air activation, so they are
 // left empty here (we cannot leave them out completely unless
@@ -41,10 +41,8 @@ const unsigned TX_INTERVAL = 10;
 void Data()
 {
   int randnum = random(100,200);
-  Serial.println("Hello from CETech");
   Serial.println(randnum);
-  mydata[0] = "Hello from CETech";
-  mydata[1]= randnum;
+  mydata[0] = randnum;
   delay(1000);
 }
 
